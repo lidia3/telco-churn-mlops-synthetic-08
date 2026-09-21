@@ -210,3 +210,5 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 models/churn_model.pkl
+mlflow_db/
+mlflow_db_old/
