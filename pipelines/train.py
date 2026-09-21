@@ -132,7 +132,7 @@ def main():
 	df = load_data(DATA_PATH)
 
 	# Basic preprocessing
-	df = df.drop(['customerID'], axis=1, errors='ignore')
+	df = df.drop(['customerID', 'RecordDate'], axis=1, errors='ignore')
 	if 'TotalCharges' in df.columns:
 		df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
 	df = df.dropna()
