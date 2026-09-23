@@ -46,6 +46,11 @@ PREDICTIONS_TOTAL = Counter(
     # contract_type: Month-to-month | One year | Two year | Unknown
 )
 
+HIGH_RISK_PREDICTIONS = Counter(
+    "high_risk_predictions",
+    "Total predictions with churn probability greater than 0.8",
+)
+
 PREDICTION_LATENCY = Histogram(
     "prediction_latency_seconds",
     "Time to run model.predict() or predict_proba() in seconds",

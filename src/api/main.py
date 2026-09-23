@@ -13,6 +13,7 @@ from prometheus_fastapi_instrumentator import Instrumentator
 # ML метрики (наші власні)
 from src.metrics import (
     PREDICTIONS_TOTAL,
+    HIGH_RISK_PREDICTIONS,
     PREDICTION_LATENCY,
     MODEL_LOAD_TIME,
     ACTIVE_MODEL_VERSION,
@@ -112,6 +113,8 @@ def predict(features: CustomerFeatures):
             raise ValueError(result["error"])
 
         churn_prob = result["churn_probability"]
+        if churn_prob > 0.8:
+            HIGH_RISK_PREDICTIONS.inc()
         outcome    = "churn" if result["churn_prediction"] == 1 else "no_churn"
 
         # Основний лічильник
