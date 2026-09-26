@@ -212,3 +212,7 @@ __marimo__/
 models/churn_model.pkl
 mlflow_db/
 mlflow_db_old/
+
+# Theme 9 local secrets and backups
+.env.theme9
+data/churn_explanations.backup.json

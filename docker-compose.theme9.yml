@@ -142,8 +142,8 @@ services:
     environment:
       - MLFLOW_TRACKING_URI=http://mlflow:5000
       - LAB_STEP=a1
-      - COST_FP=10
-      - COST_FN=300
+      - COST_FP=${COST_FP:-10}
+      - COST_FN=${COST_FN:-300}
       - N_TEST_ROWS=2000
     volumes:
       - ./data:/app/data

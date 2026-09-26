@@ -1,0 +1,5 @@
+mode=NORMAL MODE
+baseline_f1=0.7200
+current_f1=0.9332
+delta=-0.2132
+triggered=False
